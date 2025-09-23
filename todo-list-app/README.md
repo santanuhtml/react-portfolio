@@ -1,12 +1,23 @@
-# React + Vite
+## Project Overview:
+**Todo Application**: A React-based to-do list application for task management with functionality to add, mark as completed, and delete tasks. Uses local storage for persistent data.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Key Features:
+- Task Input and Add Functionality
+- Task Completion via Checkbox
+- Task Deletion
+- Local Storage for Persistence
 
-Currently, two official plugins are available:
+## Components:
+- **TodoItem**: Displays individual tasks with options to complete or delete.
+- **AddTodo**: Input component for adding new tasks.
+- **App**: Manages state, integrates components, and handles local storage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Logic Flow:
+1. User adds a task (input -> click 'Add' button).
+2. User marks a task as completed (checkbox -> toggle completion).
+3. User deletes a task (click delete -> remove from list).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Areas for Improvement:
+- Editing task feature.
+- Better UI styling.
+- Add categorization for tasks.
