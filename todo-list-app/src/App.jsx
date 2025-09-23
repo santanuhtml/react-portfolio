@@ -11,9 +11,6 @@ function App() {
     return JSON.parse(localStorage.getItem("todoListCount")) || 0;
   });
 
-  const checkboxRef = useRef(null);
-  const textRef = useRef(null);
-
   const handleInputChange = (e) => {
     setTodoInput(e.target.value);
   };
@@ -45,10 +42,12 @@ function App() {
 
 
   const deleteTodo = (deleteIndex) => {
-    setInputList(prev => prev.filter((_, id) => {
-      return id !== deleteIndex; 
-    }));
-  }
+  setInputList(prev => {
+    const updatedList = prev.filter((_, id) => id !== deleteIndex);
+    localStorage.setItem("todoList", JSON.stringify(updatedList));
+    return updatedList;
+  });
+}
  
   useEffect(() => {
     setTodoCount(()=>{
