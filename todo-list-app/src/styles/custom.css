@@ -1,0 +1,94 @@
+
+:root{
+    --dark-color:#2c2929;;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+.o-container{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+.o-heading{
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+.o-input-container{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.o-input{
+    width: 100%;
+    padding: 10px 4px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid var(--dark-color);
+    border-radius: 0px;
+}
+.o-addBtn{
+    width: 45px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background:var(--dark-color);
+    border-radius: 10px;
+    color: #fff;
+    opacity: 1;
+    border: none;
+    cursor: pointer;
+}
+
+.o-addBtn svg{
+    color: #fff;
+    width: 21px;
+    height: 19px;
+}
+.o-input:focus-visible{
+    outline: none;
+    border-bottom: 1px solid rgb(255, 153, 0);
+}
+.o-input::placeholder{
+    color:#494949;
+    font-size: 15px;
+}
+.o-list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: calc(100vh - 160px);
+    overflow: auto;
+    scrollbar-width: thin;
+    padding-right: 15px;
+}
+.o-todoList{
+    display: grid;
+    grid-template-columns: 20px 1fr 25px;
+    gap: 10px;
+    padding: 12px 14px 11px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 22px;
+    align-items: flex-start;
+    transition: all 0.2s ease-in-out;
+}
+.o-todoList:hover{
+    border: 1px solid var(--dark-color);
+}
+.o-closebtn{
+    cursor: pointer;
+    background: #fff;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 12px;
+}
