@@ -45,6 +45,7 @@ function App() {
   setInputList(prev => {
     const updatedList = prev.filter((_, id) => id !== deleteIndex);
     localStorage.setItem("todoList", JSON.stringify(updatedList));
+    // console.log(updatedList.length);
     return updatedList;
   });
 }
@@ -61,7 +62,7 @@ function App() {
       <div className="o-container">
         <h1 className="o-heading">Your To-Do</h1>
         <div className="o-input-container">
-          <input className="o-input" placeholder="Add New Task" onChange={handleInputChange} type="text" value={todoInput} />
+          <textarea style={{height:45}} className="o-input" placeholder="Add New Task" onChange={handleInputChange} type="text" value={todoInput} />
           <button className="o-addBtn" onClick={addNewList}>
             <img src={Add} width={21} height={21} alt="Add" />
           </button>
@@ -69,7 +70,7 @@ function App() {
         <div className="o-list-container">
           {inputList && inputList.map((item, index) => {
             return (
-              <div className="o-todoList" key={index}>
+              <div className="o-todoList" key={index} style={{ opacity: item.isCompleted ? 0.3 : 1 }}>
                 <div><input onChange={() => handleCheckboxChange(index)} type="checkbox" checked={item.isCompleted || false} /></div>
                 <div style={{ textDecoration: item.isCompleted ? 'line-through' : 'none' }}>{item.text}</div>
                 <button className="o-closebtn" onClick={()=>deleteTodo(index)}>
@@ -78,7 +79,7 @@ function App() {
               </div>
             )
           })}
-          <p><i>Your remaining todos: {todoCount}</i></p>
+          <p><i>Todo List: {todoCount}</i></p>
         </div>
       </div>
 
