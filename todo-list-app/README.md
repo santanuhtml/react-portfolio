@@ -1,6 +1,8 @@
 ## Project Overview:
 **Todo Application**: A React-based to-do list application for task management with functionality to add, mark as completed, and delete tasks. Uses local storage for persistent data.
 
+[Live Demo](https://react-todo-list-app7.vercel.app/)
+
 ## Key Features:
 - Task Input and Add Functionality
 - Task Completion via Checkbox
