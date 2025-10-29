@@ -1,0 +1,9 @@
+@import "tailwindcss";
+/* Theme toggle with attribute */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+body{
+   font-family: "Zalando Sans SemiExpanded", sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+}
