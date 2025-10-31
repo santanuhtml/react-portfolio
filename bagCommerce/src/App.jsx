@@ -2,12 +2,12 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Layout from "./pages/Layout";
 import { publicRoutes } from "./routes/PublicRoutes";
-import CustomModal from "./components/CustomModal";
+import MaintenanceModal from "./modals/MaintenanceModal";
 
 function App() {
   return (
     <>
-      <CustomModal modalTitle="Site is Under Development" />
+      <MaintenanceModal modalTitle="Site is Under Development" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

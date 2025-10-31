@@ -43,10 +43,11 @@ function Footer(){
                         <div>
                             <h3 className="text-2xl font-semibold">Products</h3>
                             <ul className="mt-5 flex flex-col justify-center gap-1 text-[15px] md:text-[17px]">
-                                <li><a href="#">Latest Products</a></li>
-                                <li><a href="#">Bags</a></li>
-                                <li><a href="#">Accessories</a></li>
-                                <li><a href="#">Service</a></li>
+                                <li><Link className="text-white" to="/products">Latest Products</Link></li>
+                                <li><Link className="text-white" to="/products/category/luggage">Luggage</Link></li>
+                                <li><Link className="text-white" to="products/category/backpacks">Backpacks</Link></li>
+                                <li><Link className="text-white" to="products/category/duffles">Duffles</Link></li>
+                                <li><Link className="text-white" to="products/category/accessories">Accessories</Link></li>
                             </ul>
                         </div>
                     </div>
