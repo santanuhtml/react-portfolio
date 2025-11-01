@@ -31,7 +31,7 @@ function ProductCategory(){
         return(
             <>
                 <div>
-                    <div className="text-center py-20 text-lg animate-pulse text-gray-600">Loading...</div>
+                    <div className="h-[calc(100vh-117px)] text-center py-20 text-lg animate-pulse text-gray-600">Loading...</div>
                 </div>
             </>
         )
@@ -43,10 +43,11 @@ function ProductCategory(){
             
             <section>
                 <div className="container max-w-screen-2xl mx-auto px-6 py-10 md:py-15">
-                    <h1 className="text-4xl font-bold uppercase mb-2">{ categorySlug }</h1>
+                    <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold uppercase">{ categorySlug }</h1>
                     <br />
                     {products.length > 0 && (
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+                     <div className="mt-1 grid gap-4 lg:gap-5 xl:gap-7 grid-cols-[repeat(auto-fill,minmax(120px,1fr))]  md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))]">
+
                         {products.map((item)=>(
                             <div>
                                 <FeaturesProductCard key={item.id} productInfo={item} />

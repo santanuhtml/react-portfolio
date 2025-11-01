@@ -54,9 +54,11 @@ function ProductDetail(){
 
     if(loading){
         return(
-            <div className="text-center py-20 text-lg animate-pulse text-gray-600">
-                Loading product details...
-            </div>
+            <>
+                <div>
+                    <div className="h-[calc(100vh-117px)] text-center py-20 text-lg animate-pulse text-gray-600">Loading...</div>
+                </div>
+            </>
         )
     }
     
@@ -75,7 +77,7 @@ function ProductDetail(){
         </div>
         )
     }
-    console.log(product);
+    
 
     return(
         <>
@@ -92,16 +94,16 @@ function ProductDetail(){
                         </div>
                         <div>
                             <div>
-                                <h2 className="text-5xl font-bold">{product.title}</h2>
+                                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold">{product.title}</h2>
                                 <div className="mt-6">
                                     <p>{product.description}</p>
                                 </div>
                                 <div className="mt-8 flex justify-between items-center">
                                     <div>
-                                        <div className=" uppercase  text-3xl font-semibold block">${product.price} <span className="text-[20px] text-red-400 line-through">${(product.price + 10).toFixed(2)}</span></div>
+                                        <div className=" uppercase text-2xl  lg:text-3xl font-semibold block">${product.price} <span className="text-[20px] text-red-400 line-through">${(product.price + 10).toFixed(2)}</span></div>
                                     </div>
                                     <div>
-                                        <ul className="flex gap-0.5">
+                                        <ul className="flex flex-wrap gap-0.5">
                                             <li><PiStarFill size={22} className="text-yellow-500" /></li>
                                             <li><PiStarFill size={22} className="text-yellow-500"  /></li>
                                             <li><PiStarFill size={22} className="text-yellow-500" /></li>
@@ -145,7 +147,7 @@ function ProductDetail(){
                                         </div>
                                     </li>
                                     <li>
-                                        <div className="flex gap-3 text-[17px] ">
+                                        <div className="flex gap-3 text-[17px] items-center">
                                             <div className="font-semibold uppercase">Bag Size:</div>
                                             {/* <div className="flex gap-3">
                                                 <div className="w-7 h-7 border flex items-center justify-center leading-0 cursor-pointer">S</div>
@@ -170,7 +172,7 @@ function ProductDetail(){
                                         </div>
                                     </li>
                                     <li>
-                                        <div className="grid grid-cols-1 md:grid-cols-[4fr_8fr] gap-2 mt-3">
+                                        <div className="grid grid-cols-1 lg:grid-cols-[4fr_8fr] xl:grid-cols-[5fr_8fr] gap-2 mt-3">
                                             <div className="w-full h-16 bg-gray-200 rounded-[50px] flex gap-1 items-center  justify-between p-2">
                                                 <button className="h-full w-16 bg-black grow rounded-[50px] text-white text-2xl cursor-pointer">-</button>
                                                 <div className="h-full w-16 bg-white grow rounded-[50px] text-[20px] text-black flex justify-center items-center">1</div>
@@ -189,11 +191,12 @@ function ProductDetail(){
                     {relatedProducts.length > 0 && (
                         <div className="mt-20">
                             <h2 className="text-4xl font-bold uppercase">Related Products</h2>
+                            <br />
                             <div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10" >
+                                <div className="mt-1 grid gap-4 lg:gap-5 xl:gap-7 grid-cols-[repeat(auto-fill,minmax(120px,1fr))]  md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))]">
                                     {relatedProducts.map((item)=>(
-                                        <div>
-                                            <FeaturesProductCard key={item.id} productInfo={item} />
+                                        <div key={item.id}>
+                                            <FeaturesProductCard productInfo={item} />
                                         </div>
                                     ))}
                                 </div>

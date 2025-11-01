@@ -1,6 +1,5 @@
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router";
-import { useState } from "react";
 
 function MobileMenu({menuVisible, menuToggle }){
     if(!menuVisible){
@@ -13,7 +12,7 @@ function MobileMenu({menuVisible, menuToggle }){
     return(
         <>
             <>
-                <div className="absolute z-20 bg-black w-2/3 h-screen top-0 right-0 p-6">
+                <div className="fixed z-20 bg-black w-2/3 h-screen top-0 right-0 p-6">
                 <div>
                     <RxCross2
                         className="absolute top-4 right-4 cursor-pointer text-white"

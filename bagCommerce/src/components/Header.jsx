@@ -1,12 +1,17 @@
 import { PiUserCircleLight, PiShoppingCartLight, PiHeartStraightLight } from "react-icons/pi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router";
-import MobileMenu from "./MobileMenu";
+import { lazy, Suspense } from "react";
+import React from "react";
+const MobileMenu = React.lazy(() => import('./MobileMenu'));
+
 import { useState } from "react";
 
 function Header() {
     const [menuVisible, setMenuVisible] = useState(false);
-    const menuToggle = () => setMenuVisible(prev => !prev);
+    const menuToggle = () => {
+        return setMenuVisible(prev => !prev);
+    }
 
 
     return (
@@ -37,7 +42,11 @@ function Header() {
                     </div>
                 </div>
             </header>
-            <MobileMenu menuVisible={menuVisible} menuToggle={menuToggle} />
+            
+
+            <Suspense fallback={<div>Loading...</div>}>
+                <MobileMenu menuVisible={menuVisible} menuToggle={menuToggle} />
+            </Suspense>
         </>
     )
 }
