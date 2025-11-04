@@ -10,6 +10,9 @@ const Faq = lazy(()=> import("../pages/public/Faq"));
 const ProductList = lazy(()=> import("../pages/public/ProductList"));
 const ProductCategory = lazy(()=> import("../pages/public/ProductCategory"));
 const ProductDetail = lazy(()=> import("../pages/public/ProductDetail"));
+const Cart = lazy(()=> import("../pages/public/Cart"));
+const Login = lazy(()=> import("../pages/public/Login"));
+const Signup = lazy(()=> import("../pages/public/Signup"));
 
 
 
@@ -42,5 +45,17 @@ export const publicRoutes = [
     {
         path: '/products/:slug',
         element: ProductDetail
+    },
+    {
+        path: '/cart',
+        element: Cart
+    },
+    {
+        path: '/login',
+        element: Login
+    },
+    {
+        path: '/signup',
+        element: Signup
     }
 ];
