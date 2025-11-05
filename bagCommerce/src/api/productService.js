@@ -26,7 +26,6 @@ export const getRelatedProducts = async (category) => {
 //   return data?.[0]; // MockAPI returns an array
 // };
 
-
 // Get products by category (if supported)
 export const getProductsByCategory = async (category) => {
   const response = await axios.get(`${API_URL}?category=${category}`);

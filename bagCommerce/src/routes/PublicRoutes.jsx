@@ -14,9 +14,6 @@ const Cart = lazy(()=> import("../pages/public/Cart"));
 const Login = lazy(()=> import("../pages/public/Login"));
 const Signup = lazy(()=> import("../pages/public/Signup"));
 
-
-
-
 export const publicRoutes = [
     {
         path: '/',

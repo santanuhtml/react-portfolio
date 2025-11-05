@@ -47,7 +47,7 @@ function Header() {
                                         <PiUserCircleLight size={28} /> Login
                                     </Link>
                                     {/* <div className="text-[13px]">Hi Santanu</div> */}
-                                    <div class="absolute hidden group-hover:block bg-white min-w-[180px] p-[15px] border border-gray-300 rounded-[10px] text-[15px] left-1/2 -translate-x-1/2 ">
+                                    <div className="absolute hidden group-hover:block bg-white min-w-[180px] p-[15px] border border-gray-300 rounded-[10px] text-[15px] left-1/2 -translate-x-1/2 ">
                                         <ol className="flex flex-col gap-1.5">
                                             <li>My Profile</li>
                                             <li>Orders</li>

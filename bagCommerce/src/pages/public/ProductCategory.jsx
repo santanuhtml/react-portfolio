@@ -10,14 +10,14 @@ function ProductCategory(){
       const [loading, setLoading] = useState(true);
 
      useEffect(()=>{
-         setProducts([]);
+        setProducts([]);
         setLoading(true);
          const fetchCategoryData = async () =>{
                 try{
                     const data = await getProductsByCategory(categorySlug);
                     setProducts(data);
                 }catch (error){
-                    console.error("Error fetching products:", error);
+                     console.error("Error fetching products:", error);
                     
                 }finally{
                     setLoading(false);
@@ -38,8 +38,6 @@ function ProductCategory(){
 
     return(
         <>
-           
-            
             <section>
                 <div className="container max-w-screen-2xl mx-auto px-6 py-5 md:py-10">
                     <h1 className="text-xl lg:text-2xl xl:text-3xl font-bold uppercase">{ categorySlug }</h1>
