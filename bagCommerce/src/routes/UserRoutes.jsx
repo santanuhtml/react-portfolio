@@ -2,10 +2,20 @@ import { lazy } from "react";
 
 // Lazy load secondary pages
 const UserProfile = lazy(()=> import("../pages/user/UserProfile"));
+const EditUserProfile = lazy(()=> import("../pages/user/EditUserProfile"));
+const ChangeUserPassword = lazy(()=> import("../pages/user/ChangeUserPassword"));
 
 export const userRoutes = [
     {
-        path: '/user',
+        path: '/user/profile/',
         element: UserProfile
+    },
+    {
+        path: '/user/edit-profile/',
+        element: EditUserProfile
+    },
+    {
+        path: '/user/change-password/',
+        element: ChangeUserPassword
     }
 ];

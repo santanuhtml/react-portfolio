@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 const CartContext = createContext();
 
-
 const CartProvider = ({children}) =>{
     const [cart, setCart] = useState([]);
     const [cartPrice, setCartPrice] = useState(0);

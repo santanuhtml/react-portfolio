@@ -1,19 +1,20 @@
-import { PiUserCircleLight, PiShoppingCartLight, PiHeartStraightLight } from "react-icons/pi";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { PiUserCircleLight, PiShoppingCartLight, PiHeartStraightLight, PiListLight, PiUser  } from "react-icons/pi";
 import { Link } from "react-router";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import React from "react";
 const MobileMenu = React.lazy(() => import('./MobileMenu'));
-
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
-
+import AuthContext from "../context/AuthContext";
 import { useState } from "react";
 
 function Header() {
 
     // cartContext setup
-    const {cartLength , cartMessage} = useContext(CartContext)
+    const {cartLength , cartMessage} = useContext(CartContext);
+
+    // AuthContext setup
+    const {isAuthenticated} = useContext(AuthContext);
 
     // Mobile Menu setup
     const [menuVisible, setMenuVisible] = useState(false);
@@ -41,27 +42,51 @@ function Header() {
                             </ul>
                         </div>
                         <div>
-                            <ul className="flex flex-row float-right gap-3 sm:gap-4 items-center">
-                                <li className="relative group">
-                                    <Link className="flex gap-1.5 items-center" to="/login">
-                                        <PiUserCircleLight size={28} /> Login
-                                    </Link>
-                                    {/* <div className="text-[13px]">Hi Santanu</div> */}
-                                    <div className="absolute hidden group-hover:block bg-white min-w-[180px] p-[15px] border border-gray-300 rounded-[10px] text-[15px] left-1/2 -translate-x-1/2 ">
-                                        <ol className="flex flex-col gap-1.5">
-                                            <li>My Profile</li>
-                                            <li>Orders</li>
-                                        </ol>
-                                    </div>
-                                </li>
+                            <ul className="flex flex-row float-right gap-3 sm:gap-3 items-center">
+
+
+                                
+                                    {isAuthenticated? (
+                                        <>
+                                            <li className="relative group">
+                                                <Link className="flex gap-1.5 items-center" to="/user/profile/">
+                                                    <PiUserCircleLight size={28} />
+                                                </Link>
+                                                <div className="absolute hidden group-hover:block bg-white min-w-[180px] p-[15px] border border-gray-300 rounded-[10px] text-[15px] left-1/2 -translate-x-1/2 ">
+                                                    <ol className="flex flex-col gap-1.5">
+                                                        <li>My Profile</li>
+                                                        <li>Orders</li>
+                                                    </ol>
+                                                </div>
+                                            </li>
+                                        </>
+                                    ):(
+                                        <>
+                                            <li>
+                                                <Link className="flex gap-1.5 items-center" to="/login">
+                                                    <PiUser  size={24}/>
+                                                </Link>
+                                            </li>
+                                        </>
+                                    )}
+
+                                    
+                                    
+                                    
+                                
                                 <li className="relative">
                                     <Link to="/cart">
                                         <PiShoppingCartLight size={28} />
-                                        <div className="-top-1 -right-2 w-5 h-5 bg-red-500 font-medium rounded-full text-[13px] flex justify-center items-center text-white absolute">{cartLength}</div>
+                                        <div className="-top-1 -right-0.5 w-4.5 h-4.5  bg-red-500 font-medium rounded-full text-[12px] flex justify-center items-center text-white absolute">{cartLength}</div>
                                     </Link>
                                 </li>
-                                <li><PiHeartStraightLight size={28} /></li>
-                                <li onClick={menuToggle} className="block lg:hidden"><RxHamburgerMenu  size={28} /></li>
+                                <li>
+                                    <PiHeartStraightLight size={28} />
+                                </li>
+
+                                {/* Mobile Menu */}
+                                <li onClick={menuToggle} className="block lg:hidden"><PiListLight  size={28} /></li>
+
                             </ul>
                         </div>
                     </div>

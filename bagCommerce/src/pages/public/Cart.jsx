@@ -1,8 +1,13 @@
 import { RxCross2 } from "react-icons/rx";
 import { useContext } from "react";
+import AuthContext from "../../context/AuthContext";
 import CartContext from "../../context/CartContext";
+import { Link } from "react-router";
 
 function Cart() {
+
+    // user setup
+    const { isAuthenticated } = useContext(AuthContext);
 
     //cart context setup
     const { cart, cartLength, cartPrice, handleChange, handleDelete } = useContext(CartContext);
@@ -139,7 +144,36 @@ function Cart() {
                                         </ul>
                                         <div>
                                             <div className="grow">
-                                                <button className="w-full mt-6 h-12 bg-black rounded-[10px] font-medium text-[16px] text-white cursor-pointer">Proceed to Checkout</button>
+
+                                                {isAuthenticated && cartLength > 0 && (
+                                                    <>
+                                                        <button className="w-full mt-6 h-12 bg-black rounded-[10px] font-medium text-[16px] text-white cursor-pointer">Proceed to Checkout</button>
+                                                    </>
+                                                )}
+
+                                                {!isAuthenticated && cartLength > 0 && (
+                                                    <>
+                                                        <Link to="/login">
+                                                            <button className="w-full mt-6 h-12 bg-black rounded-[10px] font-medium text-[16px] text-white cursor-pointer">Login to Proceed</button>
+                                                        </Link>
+                                                    </>
+                                                )}
+
+                                                
+
+
+
+
+
+                                                {/* <button className="w-full mt-6 h-12 bg-black rounded-[10px] font-medium text-[16px] text-white cursor-pointer">Proceed to Checkout</button> */}
+
+
+
+                                                {/* <Link to="/login">
+                                                            <button className="w-full mt-6 h-12 bg-black rounded-[10px] font-medium text-[16px] text-white cursor-pointer">Login to Proceed</button>
+                                                        </Link> */}
+
+
                                             </div>
                                         </div>
                                     </div>

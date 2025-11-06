@@ -24,18 +24,22 @@ function Login() {
         const response = await axios.get('https://6903141ad0f10a340b22837e.mockapi.io/bagcommerceUsers');
         const loggedInUser = response.data.find((user) => user.email === data.email && user.password === data.password);
         if(loggedInUser){
-            login(loggedInUser); // Log in the user after successful signup
+            login(loggedInUser); // Log in the With USER DATA
             setErrorMessage('');
-            navigate('/user');
+            navigate('/user/profile/');
         }
         else{
             setErrorMessage('Invalid credentials');
+            setTimeout(()=>{
+                setErrorMessage('');
+            },3000)
+           
         }
     }
 
     useEffect(() => {
         if (user) {
-            navigate('/user');
+            navigate('/user/profile/');
         }
     }, [user]);
     
