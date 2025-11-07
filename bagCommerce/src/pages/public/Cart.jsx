@@ -147,7 +147,9 @@ function Cart() {
 
                                                 {isAuthenticated && cartLength > 0 && (
                                                     <>
-                                                        <button className="w-full mt-6 h-12 bg-black rounded-[10px] font-medium text-[16px] text-white cursor-pointer">Proceed to Checkout</button>
+                                                        <Link to="/checkout/">
+                                                            <button  className="w-full mt-6 h-12 bg-black rounded-[10px] font-medium text-[16px] text-white cursor-pointer">Proceed to Checkout</button>
+                                                        </Link>
                                                     </>
                                                 )}
 

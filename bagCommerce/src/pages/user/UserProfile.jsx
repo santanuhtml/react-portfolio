@@ -124,7 +124,7 @@ function UserProfile(){
                                          />
                                     </div>
                                     <div>
-                                        <label className="text-gray-600 block mb-1 text-[13px]">Contact</label>
+                                        <label className="text-gray-600 block mb-1 text-[13px]">Another Contact</label>
                                         <input 
                                         value={user.phone2}
                                         className="w-full border border-gray-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2"

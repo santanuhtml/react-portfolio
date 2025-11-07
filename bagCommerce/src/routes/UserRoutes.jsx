@@ -4,6 +4,7 @@ import { lazy } from "react";
 const UserProfile = lazy(()=> import("../pages/user/UserProfile"));
 const EditUserProfile = lazy(()=> import("../pages/user/EditUserProfile"));
 const ChangeUserPassword = lazy(()=> import("../pages/user/ChangeUserPassword"));
+const CheckoutPage = lazy(()=> import("../pages/user/CheckoutPage"));
 
 export const userRoutes = [
     {
@@ -17,5 +18,9 @@ export const userRoutes = [
     {
         path: '/user/change-password/',
         element: ChangeUserPassword
+    },
+    {
+        path: '/checkout/',
+        element: CheckoutPage
     }
 ];

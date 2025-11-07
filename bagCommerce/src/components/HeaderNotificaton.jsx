@@ -1,7 +1,7 @@
 function HeaderNotificaton(){
     return(
         <>
-            <div className="text-center bg-black text-white p-2">
+            <div className="text-center bg-black text-white p-2 headerNotification">
                 Enjoy an Exclusive 10% coupon for your first Purchese.
             </div>
         </>
