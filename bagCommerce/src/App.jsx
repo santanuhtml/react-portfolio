@@ -46,7 +46,7 @@ function App() {
     <>
       {apiError && <div className="bg-red-500 text-center p-1 text-white text-[14px]"><div className="animate-pulse">{apiError}</div></div>}
 
-      <MaintenanceModal modalTitle="Site is Under Development" />
+      {/* <MaintenanceModal modalTitle="Site is Under Development" /> */}
       <BrowserRouter>
         <ScrollToTop />
         <Suspense fallback={<div></div>}>
